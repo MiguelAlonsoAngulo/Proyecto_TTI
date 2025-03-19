@@ -1,6 +1,6 @@
 #include "..\include\matrix.h"
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
+#include <cmath>
 
 int tests_run = 0;
 
@@ -8,17 +8,18 @@ int tests_run = 0;
 #define _assert(test) do { if (!(test)) { FAIL(); return 1; } } while(0)
 #define _verify(test) do { int r=test(); tests_run++; if(r) return r; } while(0)
 
-int m_equals(double **A, double **B, int f, int c, double p) {
-	int equal = 1;
+int m_equals(Matrix A, Matrix B, double p) {
+	if (A.n_row != B.n_row || A.n_column != B.n_column)
+		return 0;
+	else
+		for(int i = 1; i <= A.n_row; i++)
+			for(int j = 1; j <= A.n_column; j++)
+				if(fabs(A(i,j)-B(i,j)) > p) {
+					printf("%2.20lf %2.20lf\n",A(i,j),B(i,j));
+					return 0;
+				}
 	
-    for(int i = 0; i < f; i++)
-		for(int j = 0; j < c; j++)
-			if(fabs(A[i][j]-B[i][j]) > p) {
-				printf("%2.20lf %2.20lf\n",A[i][j],B[i][j]);
-				equal = 0;
-			}
-	
-	return equal;
+	return 1;
 }
 
 int m_sum_01() {
@@ -42,7 +43,7 @@ int m_sum_01() {
 	
 	Matrix R = A + B;
     
-    _assert(m_equals(C.data, R.data, f, c, 1e-10));
+    _assert(m_equals(C, R, 1e-10));
     
     return 0;
 }
@@ -58,7 +59,7 @@ int m_zeros_01() {
 	
 	Matrix B = zeros(3, 4);
     
-    _assert(m_equals(A.data, B.data, 3, 4, 1e-10));
+    _assert(m_equals(A, B, 1e-10));
     
     return 0;
 }
