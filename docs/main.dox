@@ -1,30 +1,36 @@
 /** \mainpage Conway's Game of Life
  [TOC]
  
- The Game of Life, also known as Conway's Game of Life or simply Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.
-
- It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves.
+ Initial orbit determination applying the Extended Kalman Filter.
  
- ~~~~~~~~~~~~~~~{.c}
- int **initiate(int n) {
-    int **L = (int **)malloc(n*sizeof(int *));
-    for(int i = 0; i < n; i++)
-        L[i] = (int *) malloc(n*sizeof(int));
-    
-    if (L == NULL)
-        exit(EXIT_FAILURE);
-    
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            L[i][j] = 0;
-        }
-    }
-    
-    return L;
- }
+ ![Extended-Kalman-Filter-Algorithm](Extended-Kalman-Filter-Algorithm.png)
+
+
+ ## Matrix
+ The code translated to C++ uses a Matrix class.
+ 
+ ~~~~~~~~~~~~~~~{.cpp}
+	class Matrix {
+	public:
+		int n_row, n_column;
+		double **data;
+
+		// Parameterized constructor
+		Matrix(const int n_row, const int n_column);
+		
+		// Member operators
+		double& operator () (const int row, const int column);
+		Matrix& operator + (Matrix &m);
+		Matrix& operator - (Matrix &m);
+		
+		// Non-member operators
+		friend ostream& operator << (ostream &o, Matrix &m);
+	};
  ~~~~~~~~~~~~~~~
  
- It is Turing complete and can simulate a universal constructor or any other Turing machine.
- 
- ![Conway Example](icon.png)
+ ## References
+ - O. Montenbruck, E. Gill, "Satellite Orbits: Models, Methods, and Applications," Springer Verlag, Heidelberg, 2005.
+ - D. Vallado, "Fundamentals of Astrodynamics and Applications," 4th Edition, 2013.
+ - https://celestrak.org/software/vallado/matlab.zip 
+ - https://ssd.jpl.nasa.gov/planets/eph_export.html
 */

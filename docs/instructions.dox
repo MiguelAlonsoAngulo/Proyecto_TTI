@@ -1,4 +1,4 @@
-/** \page Rules
+/** \page Instructions
  1. In test_EKF_GEOS3.m, we define global variables: const (astronomical and mathematical constants), CS (unnormalized gravity field coefficients), AuxParam (struct that represents model parameters and time for orbit propagator), eopdata (Earth orientation parameters), PC (planetary coefficients for JPL ephemerides computation).
  2. Download Earth orientation parameters from the following link (if it is out of date): [https://celestrak.org/SpaceData/EOP-All.txt ](https://celestrak.org/SpaceData/EOP-All.txt)
  3. Earth orientation parameters are read from EOP-All.txt.
