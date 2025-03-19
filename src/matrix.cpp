@@ -1,3 +1,21 @@
+// $Source$
+//------------------------------------------------------------------------------
+// Matrix
+//------------------------------------------------------------------------------
+// Initial orbit determination (Extended Kalman Filter)
+//
+// Under License © 2020.
+//
+// Created: 2025/03/28
+//
+/** @file matrix.cpp
+ *  @brief Matrix class and its operators and methods.
+ *
+ *  @author Miguel Alonso Angulo.
+ *  @bug No known bugs.
+ */
+//------------------------------------------------------------------------------
+
 #include "..\include\matrix.h"
 
 Matrix::Matrix(const int n_row, const int n_column) {

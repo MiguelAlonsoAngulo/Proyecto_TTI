@@ -1,3 +1,21 @@
+// $Source$
+//------------------------------------------------------------------------------
+// Main
+//------------------------------------------------------------------------------
+// Initial orbit determination (Extended Kalman Filter)
+//
+// Under License © 2020.
+//
+// Created: 2025/03/28
+//
+/** @file main.cpp
+ *  @brief Main program operations.
+ *
+ *  @author Miguel Alonso Angulo.
+ *  @bug No known bugs.
+ */
+//------------------------------------------------------------------------------
+
 #include "..\include\matrix.h"
 #include <iostream>
 
