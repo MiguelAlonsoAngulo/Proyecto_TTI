@@ -2,10 +2,6 @@
  [TOC]
  
  Initial orbit determination applying the Extended Kalman Filter.
- 
- ## Extended Kalman Filter
- ![Extended-Kalman-Filter-Algorithm](Extended-Kalman-Filter-Algorithm.png)
-
 
  ## Matrix
  The code translated to C++ uses a Matrix class.
@@ -28,6 +24,9 @@
 		friend ostream& operator << (ostream &o, Matrix &m);
 	};
  ~~~~~~~~~~~~~~~
+ 
+ ## Extended Kalman Filter
+ ![Extended-Kalman-Filter-Algorithm](Extended-Kalman-Filter-Algorithm.png)
  
  ## References
  - O. Montenbruck, E. Gill, "Satellite Orbits: Models, Methods, and Applications," Springer Verlag, Heidelberg, 2005.
