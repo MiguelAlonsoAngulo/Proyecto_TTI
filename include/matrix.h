@@ -1,9 +1,9 @@
 #ifndef _MATRIX_
 #define _MATRIX_
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
 #include <iostream>
 
 using namespace std;
