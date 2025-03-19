@@ -3,7 +3,7 @@
  
  Initial orbit determination applying the Extended Kalman Filter.
 
- ## Matrix
+ ## New class
  The code translated to C++ uses a Matrix class.
  
  ~~~~~~~~~~~~~~~{.cpp}
